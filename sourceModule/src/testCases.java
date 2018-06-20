@@ -15,10 +15,10 @@ public class testCases {
 
     public testCases() throws MalformedURLException {
     }
-//    @AfterMethod
-//    public void tearDown() {
-//        baseClass.driver.quit();
-//    }
+   @AfterMethod
+    public void tearDown() {
+        baseClass.driver.quit();
+    }
 
     @Test(priority = 1)
     public void signInSignOut() {
@@ -28,7 +28,7 @@ public class testCases {
     }
 
     @Test(priority = 2)
-    public void subscriptionprint() {
+    public void subscriptionPrint() {
         supportingMethods.login(propertiesFile.email, propertiesFile.password);
         homePage.clickMoreButton();
         moreTab.clickSubscriptionDetails();

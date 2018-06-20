@@ -19,8 +19,7 @@ public class subscriptionTab {
     MobileElement monthlyFeeLabel =(MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_label_fee");
     MobileElement monthlyFeeValue =(MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_fee_value");
 
-    MobileElement closeButton = (MobileElement) baseClass.driver.findElementsByXPath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]");
-
+    MobileElement closeButton = (MobileElement) baseClass.driver.findElementByAccessibilityId("Navigate up");
 
     public void closeButtonClick() {
         closeButton.click();

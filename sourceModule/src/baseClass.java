@@ -23,7 +23,7 @@ public class baseClass {
         capabilities.setCapability("platformversion", "6.0.1");
         capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "100");
         capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
-        AndroidDriver driver = new AndroidDriver(new URL("http://0.0.0.1:4723/wd/hub"), capabilities);
+        AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
         return driver;
 
     }

@@ -9,17 +9,11 @@ public class profileTab {
 
     MobileElement signoutButton = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/button_sign_out");
     MobileElement profileBackButton = (MobileElement) baseClass.driver.findElementsByXPath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]");
-
-    public MobileElement getSignoutButton() {
-        return signoutButton;
-    }
-
-    public MobileElement getProfileBackButton() {
-        return profileBackButton;
-    }
+    MobileElement confirmSignout = (MobileElement) baseClass.driver.findElementById("android:id/button1");
 
     public void clickSignoutButton() {
-        getSignoutButton().click();
+        signoutButton.click();
+        confirmSignout.click();
 
     }
 }
