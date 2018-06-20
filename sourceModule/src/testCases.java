@@ -1,37 +1,38 @@
-import io.appium.java_client.android.AndroidDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
+import java.util.concurrent.TimeUnit;
 
 public class testCases {
-    baseClass baseClass = new baseClass();
-    supportingMethods supportingMethods = new supportingMethods();
-    propertiesFile propertiesFile = new propertiesFile();
-    homePage homePage = new homePage();
-    moreTab moreTab = new moreTab();
-    subscriptionTab subscriptionTab = new subscriptionTab();
-    loginPage loginPage = new loginPage();
+
 
     public testCases() throws MalformedURLException {
     }
-   @AfterMethod
+    supportingMethods supportingMethods = new supportingMethods();
+    homePage homePage = new homePage();
+    subscriptionTab subscriptionTab = new subscriptionTab();
+    propertiesFile propertiesFile = new propertiesFile();
+
+    @AfterTest
     public void tearDown() {
-        baseClass.driver.quit();
+        baseClass.driver.closeApp();
     }
 
-    @Test(priority = 1)
-    public void signInSignOut() {
-        supportingMethods.login(propertiesFile.email,propertiesFile.password);
+    @Test(description = "Sign-in --> click on more --> click on profile of user --> signout")
+    public void signInSignOut() throws MalformedURLException {
+
+        supportingMethods.login(propertiesFile.email, propertiesFile.password);
         homePage.clickMoreButton();
         supportingMethods.signoutMethod();
     }
 
-    @Test(priority = 2)
-    public void subscriptionPrint() {
+    @Test(description = "Sign-in --> Click on More-->Click on Subscription details"+
+                        " Retrieve and print subscription details--> Signout")
+    public void subscriptionPrint() throws MalformedURLException {
         supportingMethods.login(propertiesFile.email, propertiesFile.password);
         homePage.clickMoreButton();
-        moreTab.clickSubscriptionDetails();
         supportingMethods.printSubscriptionDetails();
         subscriptionTab.closeButtonClick();
         supportingMethods.signoutMethod();

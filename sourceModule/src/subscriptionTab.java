@@ -5,59 +5,101 @@ import java.net.MalformedURLException;
 public class subscriptionTab {
     public subscriptionTab() throws MalformedURLException {
     }
+    //Method to return elements
+    public MobileElement getCloseButton() {
+        MobileElement closeButton = (MobileElement) baseClass.driver.findElementByAccessibilityId("Navigate up");
+        return closeButton;
+    }
+    public MobileElement getSubscriptioncycleLabelElement() {
+        MobileElement subscriptionCycleLabel = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_cycle_label");
+        return subscriptionCycleLabel;
+    }
+    public MobileElement subscriptionCycleValueElement() {
+        MobileElement subscriptionCycleValue = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_cycle_value");
+        return  subscriptionCycleValue;
+    }
+    public  MobileElement subscriptionDaysLabelElement() {
+        MobileElement subscriptionDaysLabel = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_remaining_days_label");
+        return  subscriptionDaysLabel;
+    }
+    public  MobileElement subscriptionDaysLabelValueElement() {
+        MobileElement subscriptionDaysValue = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_remaining_days_value");
+        return  subscriptionDaysValue;
+    }
 
-    baseClass baseClass = new baseClass();
+    public  MobileElement getDoctorNameLabelElement() {
+        MobileElement docNameLabel = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_name_label");
+        return  docNameLabel;
+    }
 
-    MobileElement subscriptionCycleLabel = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_cycle_label");
-    MobileElement subscriptionCycleValue = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_cycle_value");
-    MobileElement subscriptionDaysLabel = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_remaining_days_label");
-    MobileElement subscriptionDaysValue = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_remaining_days_value");
-    MobileElement docNameLabel = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_name_label");
-    MobileElement docNameValue = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_name_value");
-    MobileElement specialityLabel =(MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_speciality_label");
-    MobileElement specialityValue =(MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_speciality_value");
-    MobileElement monthlyFeeLabel =(MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_label_fee");
-    MobileElement monthlyFeeValue =(MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_fee_value");
+    public  MobileElement getDocValueElement() {
+        MobileElement docNameValue = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_name_value");
+        return docNameValue;
+    }
+    public MobileElement getSpecialityLabelElement() {
+        MobileElement specialityLabel =(MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_speciality_label");
+        return specialityLabel;
+    }
 
-    MobileElement closeButton = (MobileElement) baseClass.driver.findElementByAccessibilityId("Navigate up");
+    public MobileElement getSpecialityValueElement() {
+        MobileElement specialityValue =(MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_speciality_value");
+        return specialityValue;
+    }
 
+    public MobileElement getMonthlyFeeLabelElement() {
+        MobileElement monthlyFeeLabel =(MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_label_fee");
+        return  monthlyFeeLabel;
+    }
+
+    public MobileElement getMonthlyfeeValueElement() {
+        MobileElement monthlyFeeValue =(MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_fee_value");
+        return monthlyFeeValue;
+    }
+    //Methods to perform actions on elements
     public void closeButtonClick() {
-        closeButton.click();
+        getCloseButton().click();
     }
     public String getsubscriptionCycleLabel(){
-        return subscriptionCycleLabel.getText();
+        return getSubscriptioncycleLabelElement().getText();
     }
     public String getsubscriptionCycleValue(){
-        return subscriptionCycleValue.getText();
+        return subscriptionCycleValueElement().getText();
     }
     public  String getsubscriptionDaysLabel() {
-        return subscriptionDaysLabel.getText();
+        return subscriptionDaysLabelElement().getText();
     }
     public String getsubscriptionDaysValue() {
-        return subscriptionDaysValue.getText();
+
+        return subscriptionDaysLabelValueElement().getText();
     }
 
     public String getdoctorNameLabel() {
-        return docNameLabel.getText();
+
+        return getDoctorNameLabelElement().getText();
     }
     public String getdoctorNameValue() {
-        return docNameValue.getText();
+
+        return getDocValueElement().getText();
 
     }
     public String getspecialityLabel() {
-        return specialityLabel.getText();
+
+        return getSpecialityLabelElement().getText();
     }
 
     public String getspecialityValue() {
-        return specialityValue.getText();
+
+        return getSpecialityValueElement().getText();
     }
 
     public String getmonthlyFeeLabel() {
-        return monthlyFeeLabel.getText();
+
+        return getMonthlyFeeLabelElement().getText();
     }
 
     public String getmonthlyFeeValue() {
-        return monthlyFeeValue.getText();
+
+        return getMonthlyfeeValueElement().getText();
     }
 
 }

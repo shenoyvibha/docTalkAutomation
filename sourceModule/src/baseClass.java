@@ -1,9 +1,6 @@
-import com.sun.tools.corba.se.idl.constExpr.And;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
-import org.testng.annotations.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
@@ -15,20 +12,25 @@ public class baseClass {
 
     public baseClass() throws MalformedURLException {
     }
-    public static AndroidDriver getDriver() throws MalformedURLException {
-        File app = new File("/Users/vibha/apks/patient-debug.apk");
+
+    public static AndroidDriver getDriver() {
+        File app = new File("/Users/vibha/apks/patient-debug.apk"); //Specify where your apk is stored
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-        capabilities.setCapability("deviceName", "Lol");
-        capabilities.setCapability("platformversion", "6.0.1");
+        capabilities.setCapability("deviceName", ""); //Enter your device name
+        capabilities.setCapability("platformversion", ""); //Enter device platform
         capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "100");
         capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
-        AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+        AndroidDriver driver = null;
+        try {
+            driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
         return driver;
 
     }
-    public AppiumDriver driver = getDriver();
 
-
+    public static AppiumDriver driver = getDriver();
 }
 

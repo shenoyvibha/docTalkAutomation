@@ -5,16 +5,25 @@ import java.net.MalformedURLException;
 public class profileTab {
     public profileTab() throws MalformedURLException {
     }
-    baseClass baseClass = new baseClass();
 
-    MobileElement signoutButton = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/button_sign_out");
-    MobileElement profileBackButton = (MobileElement) baseClass.driver.findElementsByXPath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]");
-    MobileElement confirmSignout = (MobileElement) baseClass.driver.findElementById("android:id/button1");
+    //Methods to return elements
+    public MobileElement getSignOutButton() {
+        MobileElement signoutButton = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/button_sign_out");
+        return signoutButton;
+    }
 
+    public MobileElement getConfirmSignOutButton() {
+        MobileElement confirmSignout = (MobileElement) baseClass.driver.findElementById("android:id/button1");
+        return confirmSignout;
+    }
+
+    //Methods to perform action on elements
     public void clickSignoutButton() {
-        signoutButton.click();
-        confirmSignout.click();
+        getSignOutButton().click();
 
+    }
+    public void clickConfirmSignout() {
+        getConfirmSignOutButton().click();
     }
 }
 

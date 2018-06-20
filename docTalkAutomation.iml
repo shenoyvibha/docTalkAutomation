@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module external.linked.project.id="docTalkAutomation" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$" external.system.id="GRADLE" external.system.module.group="" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/out/production/docTalkAutomation" />
+    <output-test url="file://$MODULE_DIR$/out/test/docTalkAutomation" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.gradle" />
@@ -8,13 +10,5 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="testng-6.8.5" level="project" />
-    <orderEntry type="library" name="client-combined-3.12.0-sources" level="project" />
-    <orderEntry type="library" name="java-client-6.0.0 (1)" level="project" />
-    <orderEntry type="library" name="selenium-remote-client-2.0a2" level="project" />
-    <orderEntry type="library" name="java-client-5.0.4" level="project" />
-    <orderEntry type="library" name="selenium-java-3.6.0" level="project" />
-    <orderEntry type="library" name="byte-buddy-1.8.3" level="project" />
-    <orderEntry type="library" name="java-client-5.0.41" level="project" />
   </component>
 </module>

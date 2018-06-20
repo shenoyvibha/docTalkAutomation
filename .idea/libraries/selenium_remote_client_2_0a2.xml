@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="selenium-remote-client-2.0a2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/selenium-remote-client-2.0a2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

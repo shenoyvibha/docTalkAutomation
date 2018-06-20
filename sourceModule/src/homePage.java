@@ -5,12 +5,15 @@ import java.net.MalformedURLException;
 public class homePage {
     public homePage() throws MalformedURLException {
     }
+    //Methods to return elements
+    public MobileElement getMoreButton() {
+        MobileElement moreButton = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/menu_item_more");
+        return moreButton;
+    }
 
-    baseClass baseClass = new baseClass();
-    MobileElement moreButton = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/menu_item_more");
+    //Methods to perform action on elements
 
-
-    public void clickMoreButton() {
-        moreButton.click();
+    public void clickMoreButton() throws MalformedURLException {
+        getMoreButton().click();
     }
 }

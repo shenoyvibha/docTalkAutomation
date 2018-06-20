@@ -5,30 +5,42 @@ import java.net.MalformedURLException;
 public class loginPage {
     public loginPage() throws MalformedURLException {
     }
-    baseClass baseClass = new baseClass();
-    propertiesFile propertiesFile = new propertiesFile();
+    //Methods to return elements
+    public MobileElement getUserLogin() {
+        MobileElement userLogin = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_login");
+        return userLogin;
+    }
 
-    //Main page
-    MobileElement userLogin = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/text_login");
+    public MobileElement getEmailField() {
+        MobileElement userEmail = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/edit_text_email");
+        return userEmail;
+    }
+    public MobileElement getPassword() {
+        MobileElement userPassword = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/edit_text_password");
+        return userPassword;
+    }
+    public  MobileElement getLoginButton() {
+        MobileElement loginButton = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/button_login");
+        return loginButton;
+    }
 
-    MobileElement userEmail = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/edit_text_email");
-    MobileElement userPassword = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/edit_text_password");
-    MobileElement loginButton = (MobileElement) baseClass.driver.findElementById("com.getdoctalk.doctalk.app.patient.debug:id/button_login");
-
+    //Methds to perform action on elements
     public void userLoginClick() {
-        userLogin.click();
+        getUserLogin().click();
     }
+
     public void setUserEmail(String username) {
-        userEmail.click();
-        userEmail.sendKeys(username);
+        getEmailField().click();
+        getEmailField().sendKeys(username);
 
     }
+
     public void setUserPassword(String password) {
-        userPassword.click();
-        userPassword.sendKeys(password);
-    }
-    public void clickLogin() {
-        loginButton.click();
+        getPassword().click();
+        getPassword().sendKeys(password);
     }
 
+    public void clickLogin() {
+        getLoginButton().click();
+    }
 }
